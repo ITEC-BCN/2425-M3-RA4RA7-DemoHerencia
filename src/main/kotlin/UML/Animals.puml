@@ -1,13 +1,19 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-class Animal {
+interface IDomesticable {
+    + {abstract}acariciar()
+}
+
+abstract class Animal {
     --atributs--
     - color: String
     --mètodes--
     + constructor(color: String)
     + getColor(): String
     + setColor(color: String)
+    + {abstract} menjar()
+    + {abstract} dormir()
     + toString(): String
 }
 
@@ -19,7 +25,10 @@ class Gos {
     + getPropietari(): String
     + setPropietari(propietari: String)
     + menjar()
+    + dormir()
+    + acariciar()
     + bordar()
+    + toString(): String
 }
 
 class Lleo {
@@ -30,11 +39,29 @@ class Lleo {
     + getSelvaOrigen(): String
     + setSelvaOrigen(selvaOrigen: String)
     + menjar()
+    + dormir()
     + rugir()
     + toString(): String
 }
 
-Animal <|-- Gos
+class Lloro {
+    --atributs--
+    - parla: Boolean
+    --mètodes--
+    + constructor(color: String, parla: Boolean): super(color)
+    + getParla(): Boolean
+    + setParla(parla: Boolean)
+    + menjar()
+    + dormir()
+    + acariciar()
+    + parlar(frase: String)
+    + toString(): String
+}
+
 Animal <|-- Lleo
+Animal <|-- Gos
+Animal <|-- Lloro
+IDomesticable <|.up. Gos
+IDomesticable <|.up. Lloro
 
 @enduml
