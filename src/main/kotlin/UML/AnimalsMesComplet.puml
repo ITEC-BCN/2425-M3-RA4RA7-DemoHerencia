@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Animal {
+    --atributs--
+    - color: String
+    - pes: Float
+    - alimentacio: String
+    --mètodes--
+    + constructor(color: String, pes: Float, alimentacio: String)
+    + getColor(): String
+    + getPes(): Float
+    + getAlimentacio(): String
+    + setColor(color: String)
+    + setPes(pes: Float)
+    + setAlimentacio(alimentacio: String)
+    + menjar()
+    + toString(): String
+}
+
+class Gos {
+    --atributs--
+    - propietari: String
+    - dataNaixement: String
+    --mètodes--
+    + constructor(color: String, pes: Float, alimentacio: String, propietari: String, dataNaixement: String): super(color, pes, alimentacio)
+    + getPropietari(): String
+    + getDataNaixement(): String
+    + setPropietari(propietari: String)
+    + setDataNaixement(dataNaixement: String)
+    + bordar()
+    + toString(): String
+}
+
+class Lleó {
+    --atributs--
+    - selvaOrigen: String
+    --mètodes--
+    + constructor(color: String, pes: Float, alimentacio: String, selvaOrigen: String): super(color, pes, alimentacio)
+    + getSelvaOrigen(): String
+    + setSelvaOrigen(selvaOrigen: String)
+    + rugir()
+    + toString(): String
+}
+
+Animal <|-- Gos
+Animal <|-- Lleó
+
+@enduml

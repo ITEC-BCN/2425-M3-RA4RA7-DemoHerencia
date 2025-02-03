@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Animal {
+    --atributs--
+    - color: String
+    --mètodes--
+    + constructor(color: String)
+    + getColor(): String
+    + setColor(color: String)
+    + toString(): String
+}
+
+class Gos {
+    --atributs--
+    - propietari: String
+    --mètodes--
+    + constructor(color: String, propietari: String): super(color)
+    + getPropietari(): String
+    + setPropietari(propietari: String)
+    + menjar()
+    + bordar()
+}
+
+class Lleo {
+    --atributs--
+    - selvaOrigen: String
+    --mètodes--
+    + constructor(color: String, selvaOrigen: String): super(color)
+    + getSelvaOrigen(): String
+    + setSelvaOrigen(selvaOrigen: String)
+    + menjar()
+    + rugir()
+    + toString(): String
+}
+
+Animal <|-- Gos
+Animal <|-- Lleo
+
+@enduml
