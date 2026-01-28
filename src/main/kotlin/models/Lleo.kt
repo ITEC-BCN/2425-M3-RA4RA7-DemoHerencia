@@ -1,7 +1,7 @@
 package org.example.models
 
 class Lleo : Animal {
-    private var selvaOrigen: String = ""
+    private var selvaOrigen: String
 
     constructor(color: String, selvaOrigen: String) : super (color){
         this.selvaOrigen = selvaOrigen
